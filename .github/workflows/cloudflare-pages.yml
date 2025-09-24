@@ -20,11 +20,10 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build Next app
-        run: npm run build
-
-      - name: Package for Cloudflare Pages
-        run: npx @cloudflare/next-on-pages@latest
+      - name: Build and package for Cloudflare Pages
+        run: |
+          npm run build
+          npx @cloudflare/next-on-pages@latest
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1

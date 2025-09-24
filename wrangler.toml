@@ -2,7 +2,4 @@ name = "felicia-health-hub"
 compatibility_date = "2024-09-23"
 pages_build_output_dir = ".vercel/output/static"
 
-[build]
-command = "npm ci && npm run build && npx @cloudflare/next-on-pages@latest"
-
 
