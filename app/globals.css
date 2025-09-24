@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --accent-green: #c7ecd0; /* pastel green */
+  --accent-pink: #f7cfe0; /* soft pink */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent-green: var(--accent-green);
+  --color-accent-pink: var(--accent-pink);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0f19;
+    --foreground: #e5e7eb;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+p, a, li, input, button, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Card utility for rounded + shadow */
+.card {
+  @apply rounded-2xl shadow-md bg-white/90 backdrop-blur-sm border border-zinc-100;
+}
+
+/* Prose-like spacing for post content */
+.prose p { @apply leading-7 my-4; }
+.prose h2 { @apply text-3xl mt-10 mb-4 font-semibold; }
+.prose h3 { @apply text-2xl mt-8 mb-3 font-semibold; }
+.prose ul { @apply list-disc pl-6 my-4; }
+.prose ol { @apply list-decimal pl-6 my-4; }
+.prose a { @apply text-sky-700 underline; }
