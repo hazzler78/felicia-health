@@ -1,8 +1,6 @@
 import BlogCard from "../components/BlogCard";
 import { getAllPosts } from "@/lib/posts";
 
-export const runtime = "edge";
-
 const categories = ["Nutrition", "Training", "Lifestyle", "Product Reviews"] as const;
 
 export default function BlogPage({ searchParams }: { searchParams: { c?: string } }) {

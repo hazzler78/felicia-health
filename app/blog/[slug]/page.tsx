@@ -4,8 +4,6 @@ import AffiliateButton from "@/app/components/AffiliateButton";
 import Link from "next/link";
 import Image from "next/image";
 
-export const runtime = "edge";
-
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }
